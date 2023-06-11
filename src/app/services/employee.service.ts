@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://rest-api-freelancer.vercel.app/';
   
   constructor(private _http: HttpClient) {}
 
