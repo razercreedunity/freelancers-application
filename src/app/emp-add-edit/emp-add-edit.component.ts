@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
 import { EmployeeService } from '../services/employee.service';
@@ -20,11 +20,11 @@ export class EmpAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
-      username: '',
-      email: '',
-      phone_number: '',
-      skillsets: '',
-      hobby: '',
+      username: ['', [Validators.required]], // Add required validator
+      email: ['', [Validators.required, Validators.email]],
+      phone_number: ['', [Validators.required]],
+      skillsets: ['', [Validators.required]],
+      hobby: ['', [Validators.required]],
     });
   }
 
