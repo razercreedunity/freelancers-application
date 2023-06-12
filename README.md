@@ -2,6 +2,12 @@
 
 CDN is a fictional company that aims to build a directory of freelancers. This repository contains the code for the CDN project, which is built using the MEAN stack (MongoDB, Express.js, Angular, and Node.js). The project provides a platform for employers to find and contact freelancers for their job requirements.
 
+## Live Server
+
+The application is deployed and accessible at [[https://your-app.vercel.app](https://your-app.vercel.app)](https://freelancers-application.vercel.app/).
+
+Please visit the live server to explore the features and functionalities of the Freelancer Application.
+
 ## Features
 
 - Empower freelancers with the ability to register and showcase their expertise.
@@ -15,7 +21,7 @@ CDN is a fictional company that aims to build a directory of freelancers. This r
 - Express.js: Backend framework for building the RESTful API.
 - Angular: Frontend framework for creating a responsive and interactive user interface.
 - Node.js: JavaScript runtime for running the server-side code.
-- Other dependencies as required (e.g., Mongoose for MongoDB object modeling, etc.).
+- Vercel: Deployment platform for hosting the MEAN stack application.
 
 ## Folder Structure
 
@@ -39,7 +45,7 @@ To run this project locally, you should have the following installed:
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/razercreedunity/freelancers-application.git`
+1. Clone the repository: `git clone [https://github.com/razercreedunity/freelancers-application.git](https://github.com/razercreedunity/freelancers-application.git)`
 2. Install the dependencies: `npm install`
 3. Start the application: `ng serve`
 5. Access the application in your browser at `http://localhost:4200`.
