@@ -1,22 +1,22 @@
 <div mat-dialog-title>
     <h1>Freelancer Form</h1>
 </div>
-<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<form [formGroup]="freelancerForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Username</mat-label>
                 <input matInput type="text" formControlName="username">
-                <mat-error *ngIf="empForm.controls['username'].invalid && empForm.controls['username'].touched">
-                    <div *ngIf="empForm.controls['username'].hasError('required')"></div>
+                <mat-error *ngIf="freelancerForm.controls['username'].invalid && freelancerForm.controls['username'].touched">
+                    <div *ngIf="freelancerForm.controls['username'].hasError('required')"></div>
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email">
-                <mat-error *ngIf="empForm.controls['email'].invalid && empForm.controls['email'].touched">
-                    <div *ngIf="empForm.controls['email'].hasError('required')">.</div>
-                    <div *ngIf="empForm.controls['email'].hasError('email')"></div>
+                <mat-error *ngIf="freelancerForm.controls['email'].invalid && freelancerForm.controls['email'].touched">
+                    <div *ngIf="freelancerForm.controls['email'].hasError('required')">.</div>
+                    <div *ngIf="freelancerForm.controls['email'].hasError('email')"></div>
                 </mat-error>
             </mat-form-field>
         </div>
@@ -25,15 +25,15 @@
             <mat-form-field appearance="outline">
                 <mat-label>Phone Number</mat-label>
                 <input matInput type="text" formControlName="phone_number">
-                <mat-error *ngIf="empForm.controls['phone_number'].invalid && empForm.controls['phone_number'].touched">
-                    <div *ngIf="empForm.controls['phone_number'].hasError('required')"></div>
+                <mat-error *ngIf="freelancerForm.controls['phone_number'].invalid && freelancerForm.controls['phone_number'].touched">
+                    <div *ngIf="freelancerForm.controls['phone_number'].hasError('required')"></div>
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Skillsets</mat-label>
                 <input matInput type="text" formControlName="skillsets">
-                <mat-error *ngIf="empForm.controls['skillsets'].invalid && empForm.controls['skillsets'].touched">
-                    <div *ngIf="empForm.controls['skillsets'].hasError('required')"></div>
+                <mat-error *ngIf="freelancerForm.controls['skillsets'].invalid && freelancerForm.controls['skillsets'].touched">
+                    <div *ngIf="freelancerForm.controls['skillsets'].hasError('required')"></div>
                 </mat-error>
             </mat-form-field>
         </div>
@@ -42,8 +42,8 @@
             <mat-form-field appearance="outline">
                 <mat-label>Hobby</mat-label>
                 <input matInput type="text" formControlName="hobby">
-                <mat-error *ngIf="empForm.controls['hobby'].invalid && empForm.controls['hobby'].touched">
-                    <div *ngIf="empForm.controls['hobby'].hasError('required')"></div>
+                <mat-error *ngIf="freelancerForm.controls['hobby'].invalid && freelancerForm.controls['hobby'].touched">
+                    <div *ngIf="freelancerForm.controls['hobby'].hasError('required')"></div>
                 </mat-error>
             </mat-form-field>
         </div>

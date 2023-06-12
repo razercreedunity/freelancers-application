@@ -5,25 +5,25 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class EmployeeService {
+export class FreelancerService {
 
   private apiUrl = 'https://rest-api-freelancer.vercel.app';
   
   constructor(private _http: HttpClient) {}
 
-  addEmployee(data: any): Observable<any> {
+  addFreelancer(data: any): Observable<any> {
     return this._http.post(`${this.apiUrl}/post`, data);
   }
 
-  updateEmployee(id: number, data: any): Observable<any> {
+  updateFreelancer(id: number, data: any): Observable<any> {
     return this._http.patch(`${this.apiUrl}/update/${id}`, data);
   }
 
-  getEmployeeList(): Observable<any> {
+  getFreelancerList(): Observable<any> {
     return this._http.get(`${this.apiUrl}/getAll`);
   }
 
-  deleteEmployee(id: number): Observable<any> {
+  deleteFreelancer(id: number): Observable<any> {
     return this._http.delete(`${this.apiUrl}/delete/${id}`);
   }
 }

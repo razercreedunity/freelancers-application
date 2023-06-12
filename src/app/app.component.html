@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <span>Freelancers Application</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button (click)="openAddEditEmpForm()">
+  <button mat-raised-button (click)="openAddEditFreelancerForm()">
     Add Freelancer
   </button>
 </mat-toolbar>
@@ -56,7 +56,7 @@
           <button mat-icon-button color="primary" (click)="openEditForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="deleteEmployee(row._id)">
+          <button mat-icon-button color="warn" (click)="deleteFreelancer(row._id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>

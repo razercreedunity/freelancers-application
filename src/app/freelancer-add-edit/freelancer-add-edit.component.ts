@@ -2,24 +2,24 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
-import { EmployeeService } from '../services/employee.service';
+import { FreelancerService } from '../services/freelancer.service';
 
 @Component({
-  selector: 'app-emp-add-edit',
-  templateUrl: './emp-add-edit.component.html',
-  styleUrls: ['./emp-add-edit.component.scss'],
+  selector: 'app-freelancer-add-edit',
+  templateUrl: './freelancer-add-edit.component.html',
+  styleUrls: ['./freelancer-add-edit.component.scss'],
 })
-export class EmpAddEditComponent implements OnInit {
-  empForm: FormGroup;
+export class FreelancerAddEditComponent implements OnInit {
+  freelancerForm: FormGroup;
 
   constructor(
     private _fb: FormBuilder,
-    private _empService: EmployeeService,
-    private _dialogRef: MatDialogRef<EmpAddEditComponent>,
+    private _freelancerService: FreelancerService,
+    private _dialogRef: MatDialogRef<FreelancerAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _coreService: CoreService
   ) {
-    this.empForm = this._fb.group({
+    this.freelancerForm = this._fb.group({
       username: ['', [Validators.required]], // Add required validator
       email: ['', [Validators.required, Validators.email]],
       phone_number: ['', [Validators.required]],
@@ -29,14 +29,14 @@ export class EmpAddEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.empForm.patchValue(this.data);
+    this.freelancerForm.patchValue(this.data);
   }
 
   onFormSubmit() {
-    if (this.empForm.valid) {
+    if (this.freelancerForm.valid) {
       if (this.data) {
-        this._empService
-          .updateEmployee(this.data._id, this.empForm.value)
+        this._freelancerService
+          .updateFreelancer(this.data._id, this.freelancerForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Freelancer Details Updated!');
@@ -48,7 +48,7 @@ export class EmpAddEditComponent implements OnInit {
             },
           });
       } else {
-        this._empService.addEmployee(this.empForm.value).subscribe({
+        this._freelancerService.addFreelancer(this.freelancerForm.value).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar('Freelancer Added Successfully');
             this._dialogRef.close(true);

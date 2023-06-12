@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
-import { EmployeeService } from './services/employee.service';
+import { FreelancerAddEditComponent } from './freelancer-add-edit/freelancer-add-edit.component';
+import { FreelancerService } from './services/freelancer.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -29,27 +29,27 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _empService: EmployeeService,
+    private _freelancerService: FreelancerService,
     private _coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    this.getEmployeeList();
+    this.getFreelancerList();
   }
 
-  openAddEditEmpForm() {
-    const dialogRef = this._dialog.open(EmpAddEditComponent);
+  openAddEditFreelancerForm() {
+    const dialogRef = this._dialog.open(FreelancerAddEditComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getEmployeeList();
+          this.getFreelancerList();
         }
       },
     });
   }
 
-  getEmployeeList() {
-    this._empService.getEmployeeList().subscribe({
+  getFreelancerList() {
+    this._freelancerService.getFreelancerList().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
@@ -68,25 +68,25 @@ export class AppComponent implements OnInit {
     }
   }
 
-  deleteEmployee(id: number) {
-    this._empService.deleteEmployee(id).subscribe({
+  deleteFreelancer(id: number) {
+    this._freelancerService.deleteFreelancer(id).subscribe({
       next: (res) => {
         this._coreService.openSnackBar('Freelancer Deleted!', 'Done');
-        this.getEmployeeList();
+        this.getFreelancerList();
       },
       error: console.log,
     });
   }
 
   openEditForm(data: any) {
-    const dialogRef = this._dialog.open(EmpAddEditComponent, {
+    const dialogRef = this._dialog.open(FreelancerAddEditComponent, {
       data,
     });
 
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getEmployeeList();
+          this.getFreelancerList();
         }
       },
     });
