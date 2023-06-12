@@ -4,7 +4,7 @@ CDN is a fictional company that aims to build a directory of freelancers. This r
 
 ## Live Server
 
-The application is deployed and accessible at [[https://your-app.vercel.app](https://your-app.vercel.app)](https://freelancers-application.vercel.app/).
+The application is deployed and accessible at [https://freelancers-application.vercel.app/](https://freelancers-application.vercel.app/).
 
 Please visit the live server to explore the features and functionalities of the Freelancer Application.
 
