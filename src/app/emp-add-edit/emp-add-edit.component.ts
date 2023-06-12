@@ -44,6 +44,7 @@ export class EmpAddEditComponent implements OnInit {
             },
             error: (err: any) => {
               console.error(err);
+              alert("Email Already Exist");
             },
           });
       } else {
@@ -54,6 +55,7 @@ export class EmpAddEditComponent implements OnInit {
           },
           error: (err: any) => {
             console.error(err);
+            alert("Email Already Exist");
           },
         });
       }
