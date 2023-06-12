@@ -45,7 +45,7 @@ To run this project locally, you should have the following installed:
 
 ## Getting Started
 
-1. Clone the repository: `git clone [https://github.com/razercreedunity/freelancers-application.git](https://github.com/razercreedunity/freelancers-application.git)`
+1. Clone the repository: `git clone https://github.com/razercreedunity/freelancers-application.git`
 2. Install the dependencies: `npm install`
 3. Start the application: `ng serve`
 5. Access the application in your browser at `http://localhost:4200`.
