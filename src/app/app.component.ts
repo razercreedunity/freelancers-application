@@ -68,6 +68,13 @@ export class AppComponent implements OnInit {
     }
   }
 
+  confirmDelete(id: number) {
+    const confirmed = confirm('Are you sure you want to delete this freelancer?');
+    if (confirmed) {
+      this.deleteFreelancer(id);
+    }
+  }
+
   deleteFreelancer(id: number) {
     this._freelancerService.deleteFreelancer(id).subscribe({
       next: (res) => {
